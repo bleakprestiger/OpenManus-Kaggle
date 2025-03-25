@@ -203,7 +203,12 @@ class LLM:
             self.api_key = llm_config.api_key
             self.api_version = llm_config.api_version
             self.base_url = llm_config.base_url
-
+            ####LOGGING CODE FOR DEBUGGING
+            logger.info(f"model - {self.model}")
+            logger.info(f"API_KEY - {self.api_key}")
+            logger.info(f"api_type - {self.api_type}")
+            logger.info(f"base_url - {self.base_url}")
+            ####LOGGING CODE FOR DEBUGGING
             # Add token counting related attributes
             self.total_input_tokens = 0
             self.total_completion_tokens = 0
