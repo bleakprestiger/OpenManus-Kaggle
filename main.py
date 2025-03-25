@@ -28,12 +28,10 @@ async def main():
             if not prompt.strip():
                 logger.warning("Empty prompt provided.")
                 return
-            logger.info("Prompt received from user input.")
-            logger.warning("Processing your request...")
-            await agent.run(
-                prompt
-            )  # Run the agent's run method within an asyncio event loop.
-            logger.info("Request processing completed.")
+        logger.info("Prompt received from user input.")
+        logger.warning("Processing your request...")
+        await agent.run(prompt)  # Run the agent's run method within an asyncio event loop.
+        logger.info("Request processing completed.")
     except KeyboardInterrupt:
         logger.warning("Operation interrupted.")
     except Exception as e:
