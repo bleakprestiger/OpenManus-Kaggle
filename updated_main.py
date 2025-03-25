@@ -1,10 +1,11 @@
-#Generated Code By Gemma 3
+#Generated Code By Gemma 3 --- NEW CODE
 import asyncio
 import argparse
 from app.agent.manus import Manus
 from app.logger import logger
 
-def main():
+
+async def main():
     """
     Main function to handle user prompts and process them using the Manus agent.
     It supports both interactive mode (prompt from user input) and command-line argument mode (prompt from
@@ -29,8 +30,8 @@ def main():
                 return
             logger.info("Prompt received from user input.")
             logger.warning("Processing your request...")
-            asyncio.run(
-                agent.run(prompt)
+            await agent.run(
+                prompt
             )  # Run the agent's run method within an asyncio event loop.
             logger.info("Request processing completed.")
     except KeyboardInterrupt:
@@ -40,4 +41,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())
